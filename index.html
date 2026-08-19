@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumora — إكسسوارات أنيقة</title>
+<meta name="description" content="Lumora — إكسسوارات مختارة بعناية: مجوهرات، شنط، نظارات وإيشاربات.">
+<meta name="theme-color" content="#3B1F2B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211622;
+    --plum:#3B1F2B;
+    --ivory:#F1ECE4;
+    --bone:#E7DFD2;
+    --brass:#B08D57;
+    --blush:#E3B9BC;
+    --line: rgba(33,22,34,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Manrope', sans-serif;
+    overflow-x:hidden;
+  }
+  h1,h2,h3, .display{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+
+  /* ---- Header ---- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(241,236,228,0.86);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 32px;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-size:26px;
+    font-weight:600;
+    letter-spacing:0.04em;
+  }
+  .logo em{font-style:italic; color:var(--brass);}
+  .navlinks{display:flex; gap:36px; font-size:14px; letter-spacing:0.03em;}
+  .navlinks a{position:relative; padding-bottom:4px; transition:opacity .2s;}
+  .navlinks a:hover{opacity:0.6;}
+  .cart-btn{
+    border:1px solid var(--ink); border-radius:100px;
+    padding:9px 22px; font-size:13px; letter-spacing:0.03em;
+    transition: all .25s ease;
+  }
+  .cart-btn:hover{background:var(--ink); color:var(--ivory);}
+
+  /* ---- Marquee ---- */
+  .marquee{
+    background:var(--plum); color:var(--bone);
+    overflow:hidden; white-space:nowrap; padding:10px 0;
+    font-size:13px; letter-spacing:0.12em; text-transform:uppercase;
+  }
+  .marquee-track{display:inline-block; animation: scroll-left 26s linear infinite;}
+  .marquee-track span{margin:0 28px; opacity:0.85;}
+  .marquee-track span.gold{color:var(--brass); opacity:1;}
+  @keyframes scroll-left{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  /* ---- Hero ---- */
+  .hero{
+    display:grid; grid-template-columns: 1.1fr 0.9fr;
+    align-items:center; gap:40px;
+    padding:88px 32px 96px;
+    max-width:1180px; margin:0 auto;
+  }
+  .eyebrow{
+    font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--brass); margin-bottom:22px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:''; width:26px; height:1px; background:var(--brass);}
+  .hero h1{
+    font-size:clamp(40px, 5.4vw, 68px);
+    line-height:1.04;
+    margin-bottom:26px;
+  }
+  .hero h1 i{font-style:italic; color:var(--plum);}
+  .hero p{
+    font-size:16.5px; line-height:1.7; color:rgba(33,22,34,0.72);
+    max-width:440px; margin-bottom:34px;
+  }
+  .hero-ctas{display:flex; gap:16px; align-items:center;}
+  .btn-primary{
+    background:var(--plum); color:var(--ivory);
+    padding:15px 30px; border-radius:100px; font-size:14px; letter-spacing:0.03em;
+    display:inline-block; transition: transform .25s ease, background .25s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); background:var(--ink);}
+  .btn-ghost{font-size:14px; border-bottom:1px solid var(--ink); padding-bottom:3px; transition:opacity .2s;}
+  .btn-ghost:hover{opacity:0.6;}
+
+  .hero-art{
+    position:relative; aspect-ratio: 4/5; border-radius:18px;
+    background:
+      radial-gradient(circle at 30% 25%, rgba(176,141,87,0.5), transparent 55%),
+      radial-gradient(circle at 75% 70%, rgba(227,185,188,0.55), transparent 55%),
+      linear-gradient(160deg, var(--plum), #241420 70%);
+    overflow:hidden;
+  }
+  .hero-art svg{position:absolute; inset:0; width:100%; height:100%;}
+  .hero-tag{
+    position:absolute; bottom:22px; right:22px; left:22px;
+    background:rgba(241,236,228,0.92); backdrop-filter:blur(6px);
+    border-radius:12px; padding:16px 18px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:13px;
+  }
+  .hero-tag .name{font-family:'Fraunces', serif; font-size:15px;}
+  .hero-tag .price{color:var(--brass); font-weight:600;}
+
+  /* ---- Section headers ---- */
+  .section{padding:80px 32px;}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-bottom:44px; gap:20px; flex-wrap:wrap;
+  }
+  .section-head .eyebrow{margin-bottom:12px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);}
+  .section-head p{max-width:360px; font-size:14.5px; color:rgba(33,22,34,0.62); line-height:1.6;}
+
+  /* ---- Collections ---- */
+  .collections{
+    display:grid; grid-template-columns: repeat(4, 1fr); gap:20px;
+  }
+  .coll-card{
+    border-radius:16px; overflow:hidden; position:relative;
+    aspect-ratio:3/4; cursor:pointer;
+    transition: transform .35s ease;
+  }
+  .coll-card:hover{transform:translateY(-6px);}
+  .coll-bg{position:absolute; inset:0;}
+  .coll-card:nth-child(1) .coll-bg{background:linear-gradient(150deg,#3B1F2B,#8a5a63);}
+  .coll-card:nth-child(2) .coll-bg{background:linear-gradient(150deg,#B08D57,#e9d3ab);}
+  .coll-card:nth-child(3) .coll-bg{background:linear-gradient(150deg,#241420,#5c3a52);}
+  .coll-card:nth-child(4) .coll-bg{background:linear-gradient(150deg,#E3B9BC,#3B1F2B);}
+  .coll-label{
+    position:absolute; bottom:0; left:0; right:0; padding:20px;
+    background:linear-gradient(to top, rgba(0,0,0,0.45), transparent);
+    color:#fff;
+  }
+  .coll-label .num{font-size:12px; opacity:0.7; letter-spacing:0.1em;}
+  .coll-label h3{font-size:20px; margin-top:4px;}
+
+  /* ---- Why section ---- */
+  .why{background:var(--bone);}
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:34px;}
+  .why-item{padding:30px 4px; border-top:1px solid var(--line);}
+  .why-item .n{font-family:'Fraunces', serif; font-style:italic; color:var(--brass); font-size:22px; display:block; margin-bottom:14px;}
+  .why-item h3{font-size:19px; margin-bottom:10px;}
+  .why-item p{font-size:14px; line-height:1.65; color:rgba(33,22,34,0.65);}
+
+  /* ---- Newsletter / footer ---- */
+  .cta-strip{
+    background:var(--plum); color:var(--ivory);
+    padding:70px 32px; text-align:center;
+  }
+  .cta-strip h2{font-size:clamp(26px,3.6vw,38px); margin-bottom:14px;}
+  .cta-strip p{color:rgba(241,236,228,0.7); margin-bottom:30px; font-size:15px;}
+  .subscribe{display:flex; justify-content:center; gap:10px; max-width:420px; margin:0 auto;}
+  .subscribe input{
+    flex:1; padding:14px 18px; border-radius:100px; border:1px solid rgba(241,236,228,0.3);
+    background:transparent; color:var(--ivory); font-size:14px; font-family:'Manrope',sans-serif;
+  }
+  .subscribe input::placeholder{color:rgba(241,236,228,0.5);}
+  .subscribe button{
+    background:var(--brass); color:var(--ink); border:none; padding:14px 26px;
+    border-radius:100px; font-size:14px; font-weight:600; cursor:pointer;
+    transition:background .2s;
+  }
+  .subscribe button:hover{background:#c9a56b;}
+
+  footer{background:var(--ink); color:rgba(241,236,228,0.6); padding:50px 32px 26px;}
+  .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px; padding-bottom:34px; border-bottom:1px solid rgba(241,236,228,0.12);}
+  .foot-logo{font-family:'Fraunces', serif; color:var(--ivory); font-size:22px; margin-bottom:10px;}
+  .foot-cols{display:flex; gap:60px;}
+  .foot-col h4{font-size:12.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ivory); margin-bottom:14px;}
+  .foot-col a{display:block; font-size:13.5px; margin-bottom:10px; opacity:0.75; transition:opacity .2s;}
+  .foot-col a:hover{opacity:1;}
+  .foot-bottom{display:flex; justify-content:space-between; padding-top:22px; font-size:12.5px; flex-wrap:wrap; gap:10px;}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr; padding-top:52px;}
+    .collections{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:1fr;}
+    .navlinks{display:none;}
+    .subscribe{flex-direction:column;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{animation:none;}
+    .coll-card:hover{transform:none;}
+  }
+
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:-18px 0 30px}
+.filter{border:1px solid var(--line);background:transparent;border-radius:100px;padding:9px 18px;cursor:pointer;font:inherit;font-size:13px;transition:.2s}
+.filter.active,.filter:hover{background:var(--plum);color:var(--ivory);border-color:var(--plum)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.product-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.28);transition:.3s}
+.product-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(33,22,34,.08)}
+.product-visual{height:250px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.product-visual .orb{width:130px;height:130px;border-radius:50%;background:rgba(241,236,228,.22);display:flex;align-items:center;justify-content:center;font-size:70px;filter:drop-shadow(0 12px 18px rgba(0,0,0,.15))}
+.product-info{padding:18px}
+.product-cat{font-size:11px;color:var(--brass);letter-spacing:.12em;text-transform:uppercase}
+.product-info h3{font-size:19px;margin:7px 0}
+.product-desc{font-size:12.5px;line-height:1.6;color:rgba(33,22,34,.62);min-height:40px}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:16px}
+.product-price{font-weight:700;color:var(--plum)}
+.add-btn{border:0;background:var(--plum);color:var(--ivory);border-radius:100px;padding:10px 14px;cursor:pointer;font:inherit;font-size:12px}
+.add-btn:hover{background:var(--ink)}
+.cod-badge{display:inline-block;margin-top:10px;font-size:11px;padding:5px 8px;border-radius:100px;background:rgba(176,141,87,.13);color:var(--plum)}
+.trust-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:35px}
+.trust-box{border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center;font-size:13px}
+@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.products{grid-template-columns:1fr}.product-visual{height:220px}.filters{margin-top:-5px}}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">L<em>u</em>mora</div>
+    <nav class="navlinks">
+      <a href="#shop">المتجر</a>
+      <a href="#collections">التشكيلات</a>
+      <a href="#why">عن لومورا</a>
+      <a href="#newsletter">تواصل</a>
+    </nav>
+    <a href="#" class="cart-btn">السلة (0)</a>
+  </div>
+</header>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>توصيل داخل تونس</span>
+    <span class="gold">✦</span>
+    <span>عروض محدودة كل أسبوع</span>
+    <span class="gold">✦</span>
+    <span>الدفع عند الاستلام</span>
+    <span class="gold">✦</span>
+    <span>توصيل داخل تونس</span>
+    <span class="gold">✦</span>
+    <span>عروض محدودة كل أسبوع</span>
+    <span class="gold">✦</span>
+    <span>الدفع عند الاستلام</span>
+    <span class="gold">✦</span>
+  </div>
+</div>
+
+<section class="hero" id="shop">
+  <div>
+    <div class="eyebrow">تشكيلة الموسم</div>
+    <h1>إكسسوارات تكمل <i>القصة</i> اللي تحكيها كل إطلالة</h1>
+    <p>قطع مختارة بعناية من حول العالم — مجوهرات، شنط، ونظارات تجمع بين البساطة والحضور. توصلك أينما كنت.</p>
+    <div class="hero-ctas">
+      <a href="#collections" class="btn-primary">اكتشف التشكيلة</a>
+      <a href="#why" class="btn-ghost">ليش لومورا؟</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+      <circle cx="200" cy="180" r="90" fill="none" stroke="rgba(241,236,228,0.35)" stroke-width="1.5"/>
+      <circle cx="200" cy="180" r="60" fill="none" stroke="rgba(176,141,87,0.6)" stroke-width="1.5"/>
+      <path d="M120 320 Q200 260 280 320 Q260 420 200 440 Q140 420 120 320 Z" fill="rgba(227,185,188,0.18)" stroke="rgba(227,185,188,0.5)" stroke-width="1"/>
+      <line x1="60" y1="80" x2="340" y2="80" stroke="rgba(241,236,228,0.2)"/>
+      <line x1="60" y1="440" x2="340" y2="440" stroke="rgba(241,236,228,0.2)"/>
+    </svg>
+    <div class="hero-tag">
+      <div>
+        <div class="name">طقم Aurora الذهبي</div>
+        <div style="opacity:0.6; font-size:12px;">الأكثر مبيعاً هذا الأسبوع</div>
+      </div>
+      <div class="price">129 د.ت</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="collections">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">تسوّق في تونس</div>
+        <h2>مختارات Lumora</h2>
+      </div>
+      <p>منتجات بأسعار بالدينار التونسي، مع خيار الدفع عند الاستلام وإرسال الطلب مباشرة إلى بريد المتجر.</p>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="filter active" data-cat="الكل">الكل</button>
+      <button class="filter" data-cat="مجوهرات">مجوهرات</button>
+      <button class="filter" data-cat="شنط">شنط</button>
+      <button class="filter" data-cat="نظارات">نظارات</button>
+      <button class="filter" data-cat="إيشاربات">إيشاربات</button>
+    </div>
+
+    <div class="products" id="products"></div>
+  </div>
+</section>
+<section class="section why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">ليش لومورا</div>
+        <h2>مبنية على الثقة</h2>
+      </div>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <span class="n">i</span>
+        <h3>توصيل عالمي</h3>
+        <p>نوصلك في أي بلد تقريباً، مع تتبع مباشر للطلبية من لحظة الشراء لين توصلك.</p>
+      </div>
+      <div class="why-item">
+        <span class="n">ii</span>
+        <h3>جودة مؤكدة</h3>
+        <p>كل قطعة تتفحص عند المورد قبل الشحن، مع ضمان استرجاع لمدة 30 يوم.</p>
+      </div>
+      <div class="why-item">
+        <span class="n">iii</span>
+        <h3>دعم متواصل</h3>
+        <p>فريق خدمة الزبائن يرد عليك بسرعة، بلا بوتات باردة ولا انتظار طويل.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip" id="newsletter">
+  <h2>كن أول من يعرف</h2>
+  <p>اشترك باش توصلك التشكيلات الجديدة والعروض الحصرية قبل أي حد.</p>
+  <form class="subscribe" onsubmit="event.preventDefault(); this.querySelector('button').textContent='تم الاشتراك ✓';">
+    <input type="email" placeholder="بريدك الإلكتروني" required>
+    <button type="submit">اشترك</button>
+  </form>
+</section>
+
+
+<div class="wrap" style="padding-bottom:45px">
+  <div class="trust-strip">
+    <div class="trust-box">🚚 توصيل داخل تونس</div>
+    <div class="trust-box">💵 الدفع عند الاستلام</div>
+    <div class="trust-box">📩 تأكيد الطلب عبر البريد</div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Lumora</div>
+        <p style="font-size:13px; max-width:220px; line-height:1.6;">إكسسوارات مختارة بعناية، مع توصيل داخل تونس.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>المتجر</h4>
+          <a href="#">مجوهرات</a>
+          <a href="#">شنط</a>
+          <a href="#">نظارات</a>
+        </div>
+        <div class="foot-col">
+          <h4>الشركة</h4>
+          <a href="#">من نحن</a>
+          <a href="#">تواصل معنا</a>
+          <a href="#">سياسة الشحن</a>
+        </div>
+        <div class="foot-col">
+          <h4>تابعنا</h4>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Lumora. جميع الحقوق محفوظة.</span>
+      <span>Tunisia Delivery · Cash on Delivery</span>
+    </div>
+  </div>
+</footer>
+
+
+<style>
+  /* Lumora Store functionality */
+  .product-note{font-size:13px;color:rgba(33,22,34,.62);margin-top:10px}
+  .toast{position:fixed;bottom:22px;left:22px;z-index:1000;background:#211622;color:#F1ECE4;
+    padding:13px 18px;border-radius:12px;opacity:0;transform:translateY(12px);pointer-events:none;
+    transition:.25s;font-size:13px}
+  .toast.show{opacity:1;transform:translateY(0)}
+  .cart-panel{position:fixed;inset:0;z-index:900;display:none;background:rgba(0,0,0,.35)}
+  .cart-panel.open{display:block}
+  .cart-box{position:absolute;top:0;right:0;width:min(440px,100%);height:100%;background:#F1ECE4;
+    padding:28px;overflow:auto;box-shadow:-12px 0 30px rgba(0,0,0,.12)}
+  .cart-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  .cart-head h2{font-family:'Fraunces',serif}
+  .close-cart{border:1px solid #211622;background:transparent;border-radius:50%;width:36px;height:36px;cursor:pointer}
+  .cart-item{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid rgba(33,22,34,.12)}
+  .cart-item .thumb{width:64px;height:76px;border-radius:10px;background:linear-gradient(145deg,#3B1F2B,#B08D57);flex:none}
+  .cart-item h4{font-size:14px;margin-bottom:5px}
+  .cart-item p{font-size:12px;opacity:.65}
+  .qty{display:flex;align-items:center;gap:8px;margin-top:8px}
+  .qty button{width:26px;height:26px;border:1px solid rgba(33,22,34,.3);background:transparent;border-radius:6px;cursor:pointer}
+  .remove{margin-right:auto;border:0;background:transparent;text-decoration:underline;cursor:pointer;font-size:11px}
+  .cart-total{display:flex;justify-content:space-between;font-weight:700;font-size:17px;padding:20px 0}
+  .checkout{width:100%;border:0;background:#3B1F2B;color:#F1ECE4;padding:15px;border-radius:100px;cursor:pointer}
+  .empty{text-align:center;padding:50px 0;opacity:.6;font-size:14px}
+  .collection-btn{border:0;background:none;color:inherit;cursor:pointer;font:inherit;width:100%;height:100%;text-align:right}
+  .order-form{display:none;margin-top:18px;padding:18px;border:1px solid rgba(33,22,34,.14);border-radius:14px}
+  .order-form.open{display:block}
+  .order-form input,.order-form textarea{width:100%;padding:12px;border:1px solid rgba(33,22,34,.18);border-radius:9px;background:transparent;margin:6px 0;font:inherit}
+  .order-form textarea{min-height:80px;resize:vertical}
+  .order-form button{margin-top:8px}
+</style>
+
+<div class="toast" id="toast"></div>
+
+<div class="cart-panel" id="cartPanel" aria-hidden="true">
+  <div class="cart-box">
+    <div class="cart-head">
+      <h2>سلة Lumora</h2>
+      <button class="close-cart" id="closeCart" aria-label="إغلاق">×</button>
+    </div>
+    <div id="cartItems"></div>
+    <div id="cartFooter" style="display:none">
+      <div class="cart-total"><span>المجموع</span><span id="cartTotal">$0</span></div>
+      <button class="checkout" id="checkoutBtn">إتمام الطلب</button>
+      <form class="order-form" id="orderForm">
+        <strong>بيانات التوصيل</strong>
+        <input id="customerName" required placeholder="الاسم الكامل">
+        <input id="customerPhone" required placeholder="رقم الهاتف">
+        <input id="customerEmail" type="email" placeholder="البريد الإلكتروني">
+        <textarea id="customerAddress" required placeholder="العنوان والمدينة"></textarea>
+        <button class="checkout" type="submit">إرسال الطلب</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  const PRODUCTS = [
+    {id:1,name:"طقم Aurora الذهبي",price:129,cat:"مجوهرات",icon:"✦",desc:"طقم أنيق للاستخدام اليومي والمناسبات.",bg:"linear-gradient(145deg,#3B1F2B,#B08D57)"},
+    {id:2,name:"حقيبة Lumora Classic",price:169,cat:"شنط",icon:"👜",desc:"حقيبة عملية بستايل فاخر وخفيف.",bg:"linear-gradient(145deg,#B08D57,#E7DFD2)"},
+    {id:3,name:"نظارات Lumora Noir",price:89,cat:"نظارات",icon:"🕶️",desc:"تصميم عصري يكمل إطلالتك اليومية.",bg:"linear-gradient(145deg,#241420,#5c3a52)"},
+    {id:4,name:"إيشارب Lumora Silk",price:59,cat:"إيشاربات",icon:"◇",desc:"إيشارب ناعم بألوان سهلة التنسيق.",bg:"linear-gradient(145deg,#E3B9BC,#3B1F2B)"},
+    {id:5,name:"سوار Luna",price:69,cat:"مجوهرات",icon:"◌",desc:"قطعة بسيطة وأنيقة للّوك اليومي.",bg:"linear-gradient(145deg,#6b4c5c,#B08D57)"},
+    {id:6,name:"Mini Bag Pearl",price:119,cat:"شنط",icon:"◈",desc:"شنطة صغيرة للمناسبات والخروجات.",bg:"linear-gradient(145deg,#D8C2C7,#8a5a63)"}
+  ];
+  let cart = JSON.parse(localStorage.getItem("lumora_tn_cart") || "[]");
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  const money=n=>Number(n).toFixed(3).replace(/\.000$/,'')+" د.ت";
+
+  function save(){localStorage.setItem("lumora_tn_cart",JSON.stringify(cart));renderCart();}
+  function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2200);}
+  function add(p){const x=cart.find(i=>i.id===p.id);x?x.qty++:cart.push({...p,qty:1});save();toast("تمت إضافة المنتج إلى السلة");}
+  function renderProducts(cat="الكل"){
+    const list=cat==="الكل"?PRODUCTS:PRODUCTS.filter(p=>p.cat===cat);
+    $("#products").innerHTML=list.map(p=>`
+      <article class="product-card">
+        <div class="product-visual" style="background:${p.bg}">
+          <div class="orb">${p.icon}</div>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">${p.cat}</div>
+          <h3>${p.name}</h3>
+          <div class="product-desc">${p.desc}</div>
+          <span class="cod-badge">الدفع عند الاستلام</span>
+          <div class="product-bottom">
+            <span class="product-price">${money(p.price)}</span>
+            <button class="add-btn" data-add="${p.id}">أضف للسلة</button>
+          </div>
+        </div>
+      </article>`).join("");
+    $$("#products [data-add]").forEach(b=>b.onclick=()=>add(PRODUCTS.find(p=>p.id==b.dataset.add)));
+  }
+  function renderCart(){
+    const count=cart.reduce((s,i)=>s+i.qty,0);
+    $(".cart-btn").textContent=`السلة (${count})`;
+    const box=$("#cartItems"),foot=$("#cartFooter");
+    if(!cart.length){box.innerHTML='<div class="empty">السلة فارغة حالياً</div>';foot.style.display="none";return;}
+    foot.style.display="block";
+    box.innerHTML=cart.map(i=>`
+      <div class="cart-item">
+        <div class="thumb" style="background:${i.bg}"><div style="display:flex;height:100%;align-items:center;justify-content:center;font-size:25px">${i.icon}</div></div>
+        <div style="flex:1">
+          <h4>${i.name}</h4><p>${i.cat} · ${money(i.price)}</p>
+          <div class="qty">
+            <button data-act="minus" data-id="${i.id}">−</button><span>${i.qty}</span>
+            <button data-act="plus" data-id="${i.id}">+</button>
+            <button class="remove" data-act="remove" data-id="${i.id}">حذف</button>
+          </div>
+        </div>
+      </div>`).join("");
+    $("#cartTotal").textContent=money(cart.reduce((s,i)=>s+i.price*i.qty,0));
+  }
+
+  // Header cart
+  $(".cart-btn").addEventListener("click",e=>{e.preventDefault();$("#cartPanel").classList.add("open");});
+  $("#closeCart").onclick=()=>$("#cartPanel").classList.remove("open");
+  $("#cartPanel").onclick=e=>{if(e.target.id==="cartPanel")$("#closeCart").click();};
+
+  $("#cartItems").onclick=e=>{
+    const b=e.target.closest("button[data-act]");if(!b)return;
+    const id=Number(b.dataset.id),x=cart.find(i=>i.id===id);
+    if(b.dataset.act==="plus")x.qty++;
+    if(b.dataset.act==="minus"){x.qty--;if(x.qty<=0)cart=cart.filter(i=>i.id!==id);}
+    if(b.dataset.act==="remove")cart=cart.filter(i=>i.id!==id);
+    save();
+  };
+
+  // Checkout
+  $("#checkoutBtn").onclick=()=>$("#orderForm").classList.toggle("open");
+  $("#orderForm").onsubmit=e=>{
+    e.preventDefault();
+    const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+    const lines=cart.map(i=>`- ${i.name} × ${i.qty} = ${money(i.price*i.qty)}`).join("\n");
+    const body=`طلب جديد من Lumora TN\n\nالاسم: ${$("#customerName").value}\nالهاتف: ${$("#customerPhone").value}\nالإيميل: ${$("#customerEmail").value || "غير مذكور"}\nالمدينة/العنوان: ${$("#customerAddress").value}\n\nالمنتجات:\n${lines}\n\nالمجموع: ${money(total)}\nطريقة الدفع: الدفع عند الاستلام`;
+    navigator.clipboard?.writeText(body).catch(()=>{});
+    window.location.href="mailto:ffedi6124@gmail.com?subject="+encodeURIComponent("طلب جديد - Lumora TN")+"&body="+encodeURIComponent(body);
+  };
+
+  // Category filters
+  $$("#filters .filter").forEach(b=>b.onclick=()=>{
+    $$("#filters .filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderProducts(b.dataset.cat);
+    document.querySelector("#collections").scrollIntoView({behavior:"smooth",block:"start"});
+  });
+
+  // Hero product
+  $(".hero-tag").style.cursor="pointer";
+  $(".hero-tag").onclick=()=>add(PRODUCTS[0]);
+
+  // Newsletter
+  $(".subscribe").onsubmit=e=>{
+    e.preventDefault();
+    const email=e.currentTarget.querySelector("input").value;
+    localStorage.setItem("lumora_subscriber",email);
+    e.currentTarget.querySelector("button").textContent="تم الاشتراك ✓";
+    toast("تم حفظ بريدك الإلكتروني");
+  };
+
+  document.querySelectorAll('footer a[href="#"]').forEach(a=>a.onclick=e=>e.preventDefault());
+  renderProducts();renderCart();
+})();
+</script>
+
+
+</body>
+</html>
